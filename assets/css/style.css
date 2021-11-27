@@ -69,3 +69,13 @@ body {
     font-size: 20px;
     transition: all 0.3s ease-in-out;
   }
+
+  .timeblock-custom {
+    margin: -10px auto;
+    height: 96px;
+  }
+
+  .button-custom {
+    margin-left: 0px;
+    margin-top: -8px;
+  }
