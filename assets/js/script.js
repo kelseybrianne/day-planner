@@ -4,7 +4,7 @@ var container = $(".container")
 var today = moment().format("dddd, MMMM Do");
 $("#currentDay").text(today);
 
-var currentHour = 11;
+var currentHour = 14;
 // var currentHour = moment().format("H");
 
 for(var i = 9;i <= 17; i++) {
