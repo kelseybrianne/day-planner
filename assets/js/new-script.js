@@ -42,7 +42,6 @@ for(var i = 9;i <= 17; i++) {
     // labelEl.addClass("col-1 pt-2 border-top timeblock-custom").attr("for", "hour")
     
     var labelTime = ""
-    var textareaClass = ""
     // Change 13-17 to 1-5
     if (i == 9 || i == 10 || i == 11) {
         labelTime = i + "AM";
@@ -62,6 +61,7 @@ for(var i = 9;i <= 17; i++) {
         labelTime = "5PM";
     };
     
+    var textareaClass = ""
     if (i < currentHour) {
         textareaClass = "background-color: lightgray; color : gray;";
     } else if (i == currentHour) {
@@ -72,7 +72,7 @@ for(var i = 9;i <= 17; i++) {
 
     var timeblockEl = `<div class="mb-3 row align-items-stretch text-right p-0">
     <label class="col-1 pt-2 border-top timeblock-custom" for="hour">${labelTime}</label>
-    <textarea class="form-control col-10 rounded-0 timeblock-custom" id="hour-${i}" style=${textareaClass} placeholder="Required example textarea"></textarea>
+    <textarea class="form-control col-10 rounded-0 timeblock-custom textarea" id="hour-${i}" style=${textareaClass}></textarea>
     <button class="btn btn-outline-secondary timeblock-custom button-custom col-1 p-0 align-self-sm-stretch timeblock-custom fas fa-lock" type="submit" id="button-addon2"></button></div>`
     container.append(timeblockEl);
 
@@ -111,18 +111,17 @@ for(var i = 9;i <= 17; i++) {
     // local storage key = "day-9"
 
     var savedValueForHour = localStorage.getItem("hour-" + i);
-    // textareaEl.val(savedValueForHour);
+    $("textarea").val(savedValueForHour);
+
 }
 var scheduleItem
 container.on("click", "button", function(e) {
     var userInput = $(this).siblings(".textarea").attr("id")
-    // event.target. --.dataset??
+    console.log(userInput);
     scheduleItem = $(this).siblings(".textarea").val();
     localStorage.setItem(userInput, scheduleItem);
     // console.log("button clicked");
 });
-
-container.on("click", "")
 
 
 // Save text written in the textarea to localStorage when button is clicked
