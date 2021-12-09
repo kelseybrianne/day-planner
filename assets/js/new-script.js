@@ -5,7 +5,6 @@ var container = $(".container")
 var today = moment().format("dddd, MMMM Do");
 $("#currentDay").text(today);
 
-
 // var currentHour = 13;
 var currentHour = moment().format("H");
 
